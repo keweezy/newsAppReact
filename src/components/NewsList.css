@@ -1,0 +1,32 @@
+.news{
+    border: 1px solid #e8dede;
+    position: relative;
+    border-radius: 5px;
+    width: 400px;
+    padding: 15px;
+    margin: 25px 10px 25px 10px;
+}
+.title {
+    display: flex;
+    font-weight: 800;
+    flex-flow: row wrap;
+    font-size: 15px;
+    margin-bottom: 11px;
+}
+
+.content {
+    font-size: 15px;
+    display: flex;
+    margin-bottom: 3px;
+}
+.publish {
+    font-size: 11px;
+    text-align: end;
+    margin-bottom: 4px;
+}
+.author {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: end;
+}
+
