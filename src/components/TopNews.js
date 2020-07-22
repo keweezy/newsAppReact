@@ -26,9 +26,10 @@ class TopNews extends Component {
     const myStyle = {
       display: 'flex',
       flexFlow: 'row wrap',
-      justifyContent: 'space-evenly',
+      justifyContent: 'start',
       marginTop: '30px',
-    //   background: '#d6d1d1',
+      //   background: '#d6d1d1',
+      marginLeft: '70px',
     };
 
     return (

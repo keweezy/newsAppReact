@@ -37,8 +37,9 @@ class Home extends Component {
     const myStyle = {
       display: 'flex',
       flexFlow: 'row wrap',
-      justifyContent: 'space-evenly',
+      justifyContent: 'start',
       marginTop: '30px',
+      marginLeft: '70px',
     };
 
     return (
