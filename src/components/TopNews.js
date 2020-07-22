@@ -28,7 +28,6 @@ class TopNews extends Component {
       flexFlow: 'row wrap',
       justifyContent: 'start',
       marginTop: '30px',
-      //   background: '#d6d1d1',
       marginLeft: '70px',
     };
 

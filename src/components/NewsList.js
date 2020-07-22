@@ -17,9 +17,9 @@ const News = (props) => {
           expanded={false}
           width={280}
         >
-          <div className="content">{news.content}</div>
-          <div className="publish">Published at: {news.publishedAt}</div>
-          <div className="author">Written by: {news.author}</div>
+          <div className="content">{news.content}</div><br></br>
+          <div className="publish">Published at: {news.publishedAt}</div><br></br>
+          <div className="author">Written by: {news.author}</div><br></br>
         </ShowMoreText>
       </div>
     );

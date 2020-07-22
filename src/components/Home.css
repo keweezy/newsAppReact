@@ -1,0 +1,66 @@
+.open-modal {
+    left: 83rem;
+    position: relative;
+    bottom: 80px;
+    padding: 5px 24px;
+    border-radius: 7px;
+    outline: none !important;
+}
+
+.close-modal {
+    padding: 14px 70px;
+    border-radius: 7px;
+    outline: none !important;
+    position: relative;
+    left: 80rem;
+    bottom: 30px;
+}
+
+.mb-4-1 {
+    width: 450px ;
+    height: fit-content;
+    margin-left: 30px;
+}
+
+form{
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    margin-top: 20px;
+}
+label  {
+    margin-left: 30px;
+    font-weight: 500;
+}
+.spacing {
+    margin: 0px 0px 30px 30px;
+}
+
+.date-created{
+    position: relative;
+    left: 32rem;
+    bottom: 98px;
+}
+
+.newsField {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    margin-top: 30px;
+    margin-left: 70px;
+}
+.h4-1{
+    font-size: 40px;
+}
+.post {
+    padding: 22px 70px;
+    border-radius: 7px;
+    outline: none !important;
+    position: absolute;
+    left: 41rem;
+    top: 24rem;
+}
+input{
+    padding: 0;
+    text-align: start;
+}

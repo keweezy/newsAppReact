@@ -16,8 +16,8 @@ class SearchBar extends Component {
     };
     const searchStyle = {
       marginLeft: '5px',
-      background: 'violet',
-      padding: ('1px', '4px'),
+      background: '#dedada',
+      padding: ('2px', '4px'),
       borderRadius: '5px',
     };
     return (
@@ -26,7 +26,7 @@ class SearchBar extends Component {
           <div style={searchPosition}>
             <label htmlFor="cate">View by Category</label>
             <select
-              style={{ marginLeft: '5px' }}
+              style={{ marginLeft: '5px', padding: ('0px', '4px'), borderRadius:'4px' }}
               id="cate"
               name="cate"
               value={this.state.catGroup}

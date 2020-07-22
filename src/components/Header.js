@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavbarHeader from './NavbarHeader';
-import './Header.css'
+import './Header.css';
 
 class Header extends Component {
   state = {
@@ -12,7 +12,8 @@ class Header extends Component {
       { name: 'Home' },
       { name: 'Login' },
       { name: 'Register' },
-      { name: 'TopNews' }
+      { name: 'TopNews' },
+      { name: 'AddedNews' }
     ];
     return (
       <div>
@@ -30,7 +31,7 @@ class Header extends Component {
           })}
         </ul>
       </div>
-    )
+    );
   }
 }
 

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Link, Redirect} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './Login.css';
 class Register extends Component {
-
-    state = { toLogin: false}
+  state = { toLogin: false };
   getUserInfo = () => {
     return {
       firstName: document.getElementById('defaultRegisterFormFirstName').value,
@@ -28,7 +27,7 @@ class Register extends Component {
       }
     });
     if (!flag) {
-      this.setState({toLogin: true})
+      this.setState({ toLogin: true });
       userData.push(signUpUser);
       localStorage.setItem('users', JSON.stringify(userData));
       alert('User registered successfully.');
@@ -36,9 +35,9 @@ class Register extends Component {
   };
 
   render() {
-    if(this.state.toLogin) {
-        return <Redirect to="/Login"/>
-      }
+    if (this.state.toLogin) {
+      return <Redirect to="/Login" />;
+    }
     return (
       <div className="row justify-content-md-center container1">
         <div className="col-md-4 col-md-auto">
@@ -87,9 +86,7 @@ class Register extends Component {
 
             <p>
               Already a member?
-              <Link to="/login">
-                Login
-              </Link>
+              <Link to="/login">Login</Link>
             </p>
           </form>
         </div>
