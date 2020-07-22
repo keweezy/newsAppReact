@@ -3,11 +3,10 @@ import ShowMoreText from 'react-show-more-text';
 import './NewsList.css';
 
 const News = (props) => {
-  console.log(props);
 
-  return props.newsFeeds.map((news) => {
+  return props.newsFeeds.map((news, index) => {
     return (
-      <div className="news" key={news.url}>
+      <div className="news" key={index}>
         <div className="title">{news.title}</div>
         <ShowMoreText
           lines={3}

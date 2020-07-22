@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import News from './NewsList';
 import newsApi from '../api/newsApi';
+import SearchBar from './SearchBar';
+// import Background from '../images/new-york-1745089_1920.jpg';
 
 class TopNews extends Component {
-  state = { newsFeeds: [], catGroup: 'entertainment' };
-  componentDidMount = async (catGroup) => {
+  state = { newsFeeds: [] };
+  componentDidMount() {
+    this.onSearchSubmit('entertainment');
+  }
+
+  onSearchSubmit = async (catGroup) => {
+    console.log(catGroup);
     const response = await newsApi.get('/v2/top-headlines', {
-      params: { category: this.state.catGroup },
+      params: { category: catGroup },
     });
     // console.log(response.data.articles);
     this.setState({ newsFeeds: response.data.articles });
@@ -15,42 +22,20 @@ class TopNews extends Component {
   executeOnClick(isExpanded) {
     // console.log(isExpanded);
   }
-
-  onFormSubmit = (event) => {
-    event.preventDefault();
-    this.onSubmit(this.state.catGroup);
-  };
-  onSubmit(event) {
-    console.log(this.state.catGroup);
-    this.setState({ catGroup: event });
-    console.log(this.state.catGroup);
-    this.componentDidMount();
-  }
   render() {
     const myStyle = {
       display: 'flex',
       flexFlow: 'row wrap',
       justifyContent: 'space-evenly',
       marginTop: '30px',
+    //   background: '#d6d1d1',
     };
-    // this.state.newsFeeds.map(newsFeed => {
-    //   let newsKey = newsFeed.url
-    // //   console.log(newsKey)
-    // });
 
     return (
       <div>
-        <h1 style={{ margin: '38px' }}>NEWS</h1>
-        <form onSubmit={this.onFormSubmit}>
-          <div className="field">
-            <label>Search by Category</label>
-            <input
-              type="text"
-              value={this.state.catGroup}
-              onChange={(e) => this.setState({ catGroup: e.target.value })}
-            />
-          </div>
-        </form>
+        {/* <img src={require('../images/new-york-1745089_1920.jpg')} alt='alternative'/> */}
+        <h1 style={{ margin: '38px' }}>Top Headlines</h1>
+        <SearchBar onSubmit={this.onSearchSubmit} />
         <div style={myStyle}>
           <News
             newsFeeds={this.state.newsFeeds}

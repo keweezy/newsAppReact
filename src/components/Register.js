@@ -87,7 +87,7 @@ class Register extends Component {
 
             <p>
               Already a member?
-              <Link from="/register" to="/">
+              <Link to="/login">
                 Login
               </Link>
             </p>

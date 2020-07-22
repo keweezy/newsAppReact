@@ -4,7 +4,7 @@ import './Header.css'
 
 class Header extends Component {
   state = {
-    activeIndex: null,
+    activeIndex: 0,
   };
   handleClick = (index) => this.setState({ activeIndex: index });
   render() {

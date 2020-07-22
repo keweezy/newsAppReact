@@ -9,6 +9,7 @@
 ul {
   margin: 10px;
   display: flex;
+  justify-content: space-evenly;
   list-style: none;
   border-bottom: 2px solid #d1d5da;
   margin-bottom: -1px;

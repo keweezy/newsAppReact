@@ -19,20 +19,22 @@ class Login extends Component {
     let flag = false;
     let userData = [];
     let loginUser = this.getUserInfo();
-    console.log(localStorage.getItem('users'));
+    // console.log(localStorage.getItem('users'));
     if (localStorage.getItem('users')) {
       userData = JSON.parse(localStorage.getItem('users'));
     }
-    console.log(userData);
+    // console.log(userData);
     userData.forEach((user) => {
-      console.log(user);
-      if (user.email === loginUser.email) {
+      if (loginUser.email === user.email) {
         flag = true;
         this.setState({ isLoggedIn: true });
         alert('User logged in');
       }
+      if (loginUser.email !== user.email) {
+        flag = false;
+        alert('User not Found');
+      }
     });
-    
   };
 
   render() {
@@ -91,9 +93,7 @@ class Login extends Component {
 
             <p>
               Not a member?
-              <Link from="/" to="/register">
-                Register
-              </Link>
+              <Link to="/register">Register</Link>
             </p>
           </form>
         </div>

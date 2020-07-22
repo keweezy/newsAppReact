@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import newsApi from '../api/newsApi';
 import News from './NewsList';
 
 class Home extends Component {
-  state = { newsFeeds: [] };
-  componentDidMount = async () => {
+  state = { newsFeeds: [], catGroup:'health' };
+    componentDidMount() {
+        this.onSearchSubmit()
+    };
     // var url =
     //   'http://newsapi.org/v2/top-headlines?' +
     //   'country=us&' +
@@ -16,12 +18,14 @@ class Home extends Component {
     //     console.log(response);
     // })
 
-    const response = await axios.get(
-      'http://newsapi.org/v2/top-headlines?country=us&apiKey=f735b8d472c0412f9964bdd7242d05c9'
-    );
-    // console.log(response.data.articles);
-    this.setState({ newsFeeds: response.data.articles });
-  };
+    onSearchSubmit = async () => {
+        console.log();
+        const response = await newsApi.get('/v2/everything', {
+          params: { q:'bitcoin', language:'en' },
+        });
+        // console.log(response.data.articles);
+        this.setState({ newsFeeds: response.data.articles });
+      };
 
   executeOnClick(isExpanded) {
     console.log(isExpanded);
