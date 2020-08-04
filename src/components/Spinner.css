@@ -1,0 +1,16 @@
+.position {
+    position: absolute !important;
+    height: -webkit-fill-available !important;
+    margin-top: 238px !important;
+}
+.ui.dimmer .ui.loader:after {
+    border-color: #d45858 #d45858 transparent;
+}
+.ui.dimmer .ui.loader {
+    color: #6c757d;
+    font-size: x-large;
+}
+
+.ui.dimmer {
+    background: transparent;
+}

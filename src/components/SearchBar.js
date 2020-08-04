@@ -21,8 +21,8 @@ class SearchBar extends Component {
       borderRadius: '5px',
     };
     return (
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
+      <div>
+        <form onSubmit={this.onFormSubmit}>
           <div style={searchPosition}>
             <label htmlFor="cate">View by Category</label>
             <select

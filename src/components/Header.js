@@ -6,19 +6,26 @@ class Header extends Component {
   state = {
     activeIndex: 0,
   };
-  handleClick = (index) => this.setState({ activeIndex: index });
+  // componentDidMount = (index) => {
+  //   console.log(index)
+  //   this.setState({activeIndex:index})
+  // }
+  // handleActive = (ind) => this.setState({activeIndex: })
+  handleClick = (index) => this.setState({ activeIndex: index});
   render() {
     const clickables = [
       { name: 'Home' },
       { name: 'Login' },
       { name: 'Register' },
-      { name: 'TopNews' },
-      { name: 'AddedNews' }
+      { name: 'Top News' },
+      { name: 'Added News' }
     ];
     return (
       <div>
         <ul>
           {clickables.map((clickable, i) => {
+            // let activeName = clickable.name;
+            // console.log(activeName)
             return (
               <NavbarHeader
                 key={clickable.name}

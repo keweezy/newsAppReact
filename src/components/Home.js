@@ -40,7 +40,7 @@ class Home extends Component {
   };
 
   onSearchSubmit = async () => {
-    console.log();
+    console.log('load');
     const response = await newsApi.get('/v2/everything', {
       params: { q: 'bitcoin', language: 'en' },
     });
@@ -75,8 +75,8 @@ class Home extends Component {
       return <Redirect to="/AddedNews" />;
     }
     return (
-      <div>
-        <h1 style={{ margin: '38px' }}>NEWS</h1>
+      <div style={{background: '#95afaf',     border: 'solid 1px transparent'}}>
+        <h1 style={{ margin: '38px', fontFamily: 'cursive', fontSize: 'xxx-large',position:'relative' }}>Daily NEWS</h1>
         <button onClick={this.handleOpenModal} className='open-modal'>Create News</button>
         <ReactModal
           isOpen={this.state.showModal}

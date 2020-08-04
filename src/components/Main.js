@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import Register from './Register';
@@ -12,9 +12,9 @@ const Main = () => (
       <Route path="/Home" component={Home} />
       <Route path="/Login" component={Login} />
       <Route path="/Register" component={Register} />
-      <Route path="/AddedNews" component={AddNews} />
-      <Route path="/TopNews" component={TopNews} />
-      {/* <Route render={() => <Redirect to={{ pathname: '/home' }} />} /> */}
+      <Route path="/Added News" component={AddNews} />
+      <Route path="/Top News" component={TopNews} />
+      <Route render={() => <Redirect to={{ pathname: '/home' }} />} />
     </Switch>
   </div>
 );

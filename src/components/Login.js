@@ -17,20 +17,20 @@ class Login extends Component {
   login = (event) => {
     event.preventDefault();
     let flag = false;
+    let loginInfo = this.getUserInfo();
     let userData = [];
-    let loginUser = this.getUserInfo();
-    // console.log(localStorage.getItem('users'));
-    if (localStorage.getItem('users')) {
-      userData = JSON.parse(localStorage.getItem('users'));
+    userData = JSON.parse(localStorage.getItem('users'));
+    if (localStorage.getItem('users') === null) {
+      alert('User Not Found');
+      return;
     }
-    // console.log(userData);
     userData.forEach((user) => {
-      if (loginUser.email === user.email) {
+      if (loginInfo.email === user.email) {
         flag = true;
         this.setState({ isLoggedIn: true });
         alert('User logged in');
       }
-      if (loginUser.email !== user.email) {
+      if (loginInfo.email !== user.email) {
         flag = false;
         alert('User not Found');
       }

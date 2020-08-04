@@ -28,39 +28,42 @@ class AddNews extends Component {
       //   background: '#d6d1d1',
       marginLeft: '70px',
     };
-    const New1 =() => this.state.newsData.map((sNews, index) => {
-      return (
-        <div className="news" key={index}>
-          <div className="title">TITLE: {sNews.title}</div>
-          <ShowMoreText
-            lines={3}
-            more="Show more"
-            less="Show less"
-            anchorClass=""
-            onClick={this.executeOnClick}
-            expanded={false}
-            width={280}
-          >
-            <div className="">SUBJECT: {sNews.subject}</div>
-            <br></br>
-            <div className="">CATEGORY: {sNews.category}</div>
-            <br></br>
-            <div className="content">BODY: {sNews.body}</div>
-            <br></br>
-            <div className="">UrlToImage: {sNews.urlToImage}</div>
-            <br></br>
-            <div className="author">AUTHOR: {sNews.author}</div>
-            <br></br>
-            <div className="publish">Date Created: {sNews.dateCreated}</div>
-          </ShowMoreText>
-        </div>
-      );
-    });
+    const New1 = () =>
+      this.state.newsData.map((sNews, index) => {
+        return (
+          <div className="news" key={index}>
+            <div className="title">TITLE: {sNews.title}</div>
+            <ShowMoreText
+              lines={3}
+              more="Show more"
+              less="Show less"
+              anchorClass=""
+              onClick={this.executeOnClick}
+              expanded={false}
+              width={280}
+            >
+              <div className="">SUBJECT: {sNews.subject}</div>
+              <br></br>
+              <div className="">CATEGORY: {sNews.category}</div>
+              <br></br>
+              <div className="content">BODY: {sNews.body}</div>
+              <br></br>
+              <div className="">UrlToImage: {sNews.urlToImage}</div>
+              <br></br>
+              <div className="author">AUTHOR: {sNews.author}</div>
+              <br></br>
+              <div className="publish">Date Created: {sNews.dateCreated}</div>
+            </ShowMoreText>
+          </div>
+        );
+      });
 
     return (
-      <div >
-          <h1>Added News</h1>
-        <div style={myStyle}><New1 /></div>
+      <div>
+        <h1 style={{ position: 'relative', top: '35px' }}>Added News</h1>
+        <div style={myStyle}>
+          <New1 />
+        </div>
       </div>
     );
   }
