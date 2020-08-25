@@ -4,9 +4,22 @@ class SearchBar extends Component {
   state = { catGroup: 'entertainment' };
 
   onFormSubmit = (event) => {
+    if(event.target.value === this.state.catGroup) {
+      // console.log('if condition')
+      return
+    }
     event.preventDefault();
     this.props.onSubmit(this.state.catGroup);
   };
+
+  onChange = (e) => {
+    if(e.target.value === this.state.catGroup) {
+      return
+    } else {
+
+      this.setState({catGroup: e.target.value})
+    }
+  }
 
   render() {
     const searchPosition = {
@@ -30,7 +43,7 @@ class SearchBar extends Component {
               id="cate"
               name="cate"
               value={this.state.catGroup}
-              onChange={(e) => this.setState({ catGroup: e.target.value })}
+              onChange={this.onChange}
             >
               <option value="sport">Sport</option>
               <option value="health">Health</option>

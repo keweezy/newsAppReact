@@ -1,12 +1,12 @@
 import React from 'react';
-import App from './components/App';
-import { render } from 'react-dom';
+import  ReactDOM  from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-// import './style.css';
+import App from './components/App';
+import ImageUpload from './components/ImageUpload';
 
-// ReactDOM.render(<App />, document.querySelector('#root'));
-
-render(
-    (<BrowserRouter>
-      <App />
-    </BrowserRouter>), document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+      <ImageUpload />
+  </BrowserRouter>, 
+  document.getElementById('root')
+)

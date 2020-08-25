@@ -8,12 +8,14 @@
 }
 
 .close-modal {
-    padding: 14px 70px;
-    border-radius: 7px;
     outline: none !important;
     position: relative;
-    left: 80rem;
-    bottom: 30px;
+    left: 90rem;
+    bottom: 50px;
+    border: none;
+    background: transparent;
+    color: blue;
+    cursor: pointer;
 }
 
 .mb-4-1 {
@@ -27,6 +29,7 @@ form{
     flex-flow: row wrap;
     position: relative;
     margin-top: 20px;
+    background: transparent;
 }
 label  {
     margin-left: 30px;
@@ -38,14 +41,14 @@ label  {
 
 .date-created{
     position: relative;
-    left: 32rem;
+    left: 500px;
     bottom: 98px;
 }
 
 .newsField {
     display: flex;
     flex-flow: row wrap;
-    justify-content: start;
+    /* justify-content: start; */
     margin-top: 30px;
     margin-left: 70px;
 }
@@ -59,4 +62,17 @@ label  {
     position: absolute;
     left: 41rem;
     top: 24rem;
+}
+.home{
+    width: 100%;
+    background: rgb(149, 175, 175);
+    position: absolute;
+    /* height: -webkit-fill-available; */
+}
+.height{
+    height: 100%;
+}
+.ReactModal__Content{
+    background: blanchedalmond !important;
+
 }

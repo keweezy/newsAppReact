@@ -17,6 +17,7 @@ class Login extends Component {
   login = (event) => {
     event.preventDefault();
     let flag = false;
+    console.log(flag);
     let loginInfo = this.getUserInfo();
     let userData = [];
     userData = JSON.parse(localStorage.getItem('users'));
@@ -83,7 +84,7 @@ class Login extends Component {
                 </div>
               </div>
               <div>
-                <a>Forgot password?</a>
+                <a href="/">Forgot password?</a>
               </div>
             </div>
 

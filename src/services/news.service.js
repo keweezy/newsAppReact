@@ -35,7 +35,7 @@ export const newsService = {
         language: 'en',
         country: 'us'
       }).then(response => {
-        console.log(response);
+        // console.log(response);
         /*
           {
             status: "ok",

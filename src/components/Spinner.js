@@ -1,11 +1,11 @@
 import React from 'react'; 
 import './Spinner.css';
 
-const Spinner = (props) => {
+const Spinner = ({loadText}) => {
     return (
         <div className='ui active dimmer position'>
             <div className='ui big text loader'>
-                {props.loadText}
+                {loadText}
             </div>
         </div>
     );

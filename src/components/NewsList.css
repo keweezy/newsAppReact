@@ -30,4 +30,21 @@
     font-weight: 500;
     text-align: end;
 }
-
+.del-button{
+    position: relative;
+    left: 84px;
+    border: none;
+    background: transparent;
+    bottom: 15px;
+    color: red;
+    outline: none;
+}
+button:focus {
+outline: none;
+}
+h3{
+    font-size: 4.285714rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 14rem;
+}

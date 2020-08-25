@@ -1,45 +1,61 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavbarHeader from './NavbarHeader';
 import './Header.css';
 
-class Header extends Component {
-  state = {
-    activeIndex: 0,
-  };
-  // componentDidMount = (index) => {
-  //   console.log(index)
-  //   this.setState({activeIndex:index})
+const Header = ({ state }) => {
+  const [activeIndex, setActiveIndex] = useState('Home');
+  // const [history, setHistory] = useState()
+  const [totalNews, SetTotalNews] = useState(0);
+  // active(){
+
   // }
-  // handleActive = (ind) => this.setState({activeIndex: })
-  handleClick = (index) => this.setState({ activeIndex: index});
-  render() {
-    const clickables = [
-      { name: 'Home' },
-      { name: 'Login' },
-      { name: 'Register' },
-      { name: 'Top News' },
-      { name: 'Added News' }
-    ];
-    return (
-      <div>
-        <ul>
-          {clickables.map((clickable, i) => {
-            // let activeName = clickable.name;
-            // console.log(activeName)
-            return (
-              <NavbarHeader
-                key={clickable.name}
-                name={clickable.name}
-                index={i}
-                isActive={this.state.activeIndex === i}
-                onClick={this.handleClick}
-              />
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
-}
+  const active = () => {
+    var pathname = window.location.pathname.split('/');
+    if (pathname[1] === 'Top%20News') {
+      setActiveIndex('Top News');
+    } else if (pathname[1] === 'Added%20News') {
+      setActiveIndex('Added News');
+    } else {
+      setActiveIndex(pathname[1]);
+    }
+  };
+
+  useEffect(() => {
+    // const addedNews1 = [];
+    active();
+    if (localStorage.getItem('news')) {
+      const addedNews1 = JSON.parse(localStorage.getItem('news'));
+      SetTotalNews(addedNews1.length);
+    }
+  }, [state]);
+
+  const handleClick = (name) => setActiveIndex(name);
+
+  const clickables = [
+    { name: 'Home' },
+    { name: 'Login' },
+    { name: 'Register' },
+    { name: 'Top News' },
+    { name: 'Added News' },
+  ];
+  return (
+    <div className='contain'>
+      <ul>
+        {clickables.map((clickable, i) => {
+          return (
+            <NavbarHeader
+              key={clickable.name}
+              name={clickable.name}
+              index={i}
+              isActive={activeIndex === clickable.name}
+              onClick={handleClick}
+            />
+          );
+        })}
+        <li>Total added News [{totalNews}]</li>
+      </ul>
+    </div>
+  );
+};
 
 export default Header;

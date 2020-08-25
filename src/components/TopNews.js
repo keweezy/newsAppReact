@@ -12,25 +12,17 @@ class TopNews extends Component {
   }
   hideLoader = () => {
     this.setState({loading: false})
-    console.log(this.state.loading)
-    console.log('close Spin')
   }
 
   showLoader =() => {
     this.setState({loading: true})
-    console.log(this.state.loading)
-    console.log('Spin O')
-    // this.setState({loading: false})
-    // console.log(this.state.loading)
-
   }
 
   onSearchSubmit = async (catGroup) => {
-    console.log(this.state.newsFeeds)
+
     if(catGroup === this.state.newsFeeds) {
       return 
     }
-    console.log(catGroup);
     this.showLoader();
     this.setState({newsFeeds: []})
     const response = await newsApi.get('/v2/top-headlines', {
@@ -40,8 +32,6 @@ class TopNews extends Component {
     // console.log(response.data.articles);
     this.hideLoader()
     this.setState({ newsFeeds: response.data.articles });
-    // if(response) {
-    // }
   };
 
 
